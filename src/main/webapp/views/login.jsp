@@ -13,20 +13,25 @@
         <div class="container">
             <div class="row">
                 <div class="justify-content-center card">
-                    <h1> Enter the information </h1>
+                    <h2>Key-in the required details</h2>
                     <div class="card-body">
                         <form action="/user/login/check_user"  method="get">
-                            <div class="form-group">
-                                <label for="user_id">User ID:</label>
-                                <input type="text" name="user_id" class="form-control"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password:</label>
-                                <input type="password" name="password" class="form-control"/>
-                            </div>
-                            <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
+							<table style="width: 50%">
+								<tr>
+									<td><label for="user_id">User ID:</label></td>
+									<td><input type="text" name="user_id" class="form-control"/></td>
+								</tr>
+								<tr><td><br/></td></tr>
+								<tr>
+									<td><label for="password">Password:</label></td>
+									<td><input type="password" name="password" class="form-control"/></td>
+								</tr>
+								<tr><td><br/></td></tr>
+								<tr>
+									<td></td>
+									<td><button type="submit" class="btn btn-primary">Submit</button></td>
+								</tr>
+							</table>
                         </form>
                     </div>
                 </div>

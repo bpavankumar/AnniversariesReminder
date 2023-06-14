@@ -15,7 +15,6 @@ public class LoginController {
 
 	@GetMapping("")
 	public String login(Model model) {
-		System.out.println("Entering the LoginController.login() method.");
 		return "login";
 	}
 }
