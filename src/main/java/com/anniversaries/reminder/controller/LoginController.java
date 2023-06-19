@@ -13,7 +13,7 @@ public class LoginController {
 	@Autowired
 	private UsersService usersService;
 
-	@GetMapping("")
+	@GetMapping("/")
 	public String login(Model model) {
 		return "login";
 	}
