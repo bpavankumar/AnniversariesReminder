@@ -22,7 +22,6 @@ public class LoginController {
 	@GetMapping("/home")
 	public String checkUserLogin(@RequestParam("user_id") String user_id, @RequestParam("password") String password, @RequestParam("role") String role) {
 		boolean enabled = role.equalsIgnoreCase("ADMIN") ? true : false;
-		System.out.println("USER: " + user_id + "\nPASSWORD: " + password + "\nROLE: " + enabled);
 		if (usersService.checkUserLogin(user_id, password, enabled))
 			return "success";
 		else
