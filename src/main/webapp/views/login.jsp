@@ -15,7 +15,7 @@
                 <div class="justify-content-center card">
                     <h2>Key-in the required details</h2>
                     <div class="card-body">
-                        <form action="/user/login/check_user"  method="get">
+                        <form action="/home"  method="get">
 							<table style="width: 50%">
 								<tr>
 									<td><label for="user_id">User ID:</label></td>
@@ -25,6 +25,16 @@
 								<tr>
 									<td><label for="password">Password:</label></td>
 									<td><input type="password" name="password" class="form-control"/></td>
+								</tr>
+								<tr><td><br/></td></tr>
+								<tr>
+									<td><label for="role">Role:</label></td>
+									<td>
+										<select name="role" id="role">
+											<option value="ADMIN">ADMIN</option>
+											<option value="USER">USER</option>
+										</select>
+									</td>
 								</tr>
 								<tr><td><br/></td></tr>
 								<tr>
