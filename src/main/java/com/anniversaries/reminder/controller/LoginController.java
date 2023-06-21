@@ -25,6 +25,6 @@ public class LoginController {
 		if (usersService.checkUserLogin(user_id, password, enabled))
 			return "success";
 		else
-			return "failure";
+			return "login";
 	}
 }
