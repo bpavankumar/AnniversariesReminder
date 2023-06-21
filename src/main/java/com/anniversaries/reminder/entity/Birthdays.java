@@ -16,6 +16,7 @@ public class Birthdays {
 	private Date birthDate;
 	private String relation;
 
+	@SuppressWarnings("unused")
 	private int getBirthdayId() {
 		return birthdayId;
 	}
