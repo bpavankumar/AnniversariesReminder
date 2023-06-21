@@ -23,7 +23,7 @@ public class LoginController {
 	public String checkUserLogin(@RequestParam("user_id") String user_id, @RequestParam("password") String password, @RequestParam("role") String role) {
 		boolean enabled = role.equalsIgnoreCase("ADMIN") ? true : false;
 		if (usersService.checkUserLogin(user_id, password, enabled))
-			return "success";
+			return "AdminDashboard";
 		else
 			return "login";
 	}
