@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import com.anniversaries.reminder.entity.Birthdays;
 
 public interface BirthdaysRepository extends JpaRepository<Birthdays, Integer> {
-	@Query(value = "FROM birthdays")
+	@Query(value = "FROM Birthdays")
 	List<Birthdays> fetchAllBirthdays();
 }

@@ -20,12 +20,13 @@ public class BirthdaysController {
 	@GetMapping("/home/birthdays")
 	public String allBirthdays(Model model) {
 		List<Birthdays> allBirthdays = birthdaysService.getAllBirthdays();
+		System.out.println("BirthdaysController.allBirthdays(): " + allBirthdays.size());
 		model.addAttribute("birthdays", allBirthdays);
 		return "Birthdays";
 	}
 
 	@PostMapping("/home/addbirthday")
 	public String addABirthday(Model model) {
-		return "AddBirthday";
+		return "AddABirthday";
 	}
 }
