@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page contentType="text/html; charset=UTF-8" isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,16 +18,17 @@
             </div> 
             <table class="table table-striped table-bordered" >
                 <thead class="table-dark">
-					<tr>
+					<tr bgcolor="#DEB887">
 						<th>Birthday ID</th>
 						<th>Name</th>
 						<th>Birthdate</th>
 						<th>Relation</th>
+						<th> </th>
 					</tr>
                 </thead>
                 <tbody>
                     <c:forEach var="birthday" items="${birthdays}">
-						<tr>
+						<tr bgcolor="#DEB887">
 							<td>${birthday.birthdayId}</td>                    
 							<td>${birthday.birthdayBaby}</td>
 							<td>${birthday.birthDate}</td>
