@@ -16,7 +16,6 @@ public class BirthdaysService {
 
 	public List<Birthdays> getAllBirthdays() {
 		List<Birthdays> allBirthdays = birthdaysRepository.fetchAllBirthdays();
-		System.out.println("BirthdaysService.getAllBirthdays(): " + allBirthdays.size());
 		return allBirthdays;
 	}
 }
