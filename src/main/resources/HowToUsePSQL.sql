@@ -13,4 +13,5 @@ CREATE DATABASE reminders;
 --Describe a particular table from a given database
 \d users
 
-INSERT INTO users VALUES()
+SELECT * FROM users;
+INSERT INTO users VALUES (1, true, 'pwd', 'ADMIN', 'admin');
