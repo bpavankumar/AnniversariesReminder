@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import com.anniversaries.reminder.entity.Birthdays;
 import com.anniversaries.reminder.service.BirthdaysService;
@@ -24,7 +23,7 @@ public class BirthdaysController {
 		return "birthdays";
 	}
 
-	@PostMapping("/home/addbirthday")
+	@GetMapping("/home/addbirthday")
 	public String addABirthday(Model model) {
 		return "addbirthday";
 	}
