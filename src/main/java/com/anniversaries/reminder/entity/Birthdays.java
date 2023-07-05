@@ -51,4 +51,10 @@ public class Birthdays {
 	public void setRelation(String relation) {
 		this.relation = relation;
 	}
+
+	@Override
+	public String toString() {
+		return "Birthdays [birthdayId=" + birthdayId + ", birthdayBaby=" + birthdayBaby + ", birthDate=" + birthDate
+				+ ", relation=" + relation + "]";
+	}
 }

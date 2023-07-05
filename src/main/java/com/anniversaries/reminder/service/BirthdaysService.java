@@ -18,4 +18,14 @@ public class BirthdaysService {
 		List<Birthdays> allBirthdays = birthdaysRepository.fetchAllBirthdays();
 		return allBirthdays;
 	}
+
+	public boolean addABirthday(Birthdays birthday) {
+		try {
+			birthdaysRepository.save(birthday);
+			return true;
+		} catch(Exception exception) {
+			exception.printStackTrace();
+			return false;
+		}
+	}
 }
