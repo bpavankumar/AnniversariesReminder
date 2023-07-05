@@ -17,16 +17,15 @@ public class BirthdaysController {
 	@Autowired
 	private BirthdaysService birthdaysService;
 
-	@GetMapping("/home/birthdays")
+	@GetMapping("/admin/birthdays")
 	public String allBirthdays(Model model) {
 		List<Birthdays> allBirthdays = birthdaysService.getAllBirthdays();
-		System.out.println("BirthdaysController.allBirthdays(): " + allBirthdays.size());
 		model.addAttribute("birthdays", allBirthdays);
-		return "Birthdays";
+		return "birthdays";
 	}
 
 	@PostMapping("/home/addbirthday")
 	public String addABirthday(Model model) {
-		return "AddABirthday";
+		return "addbirthday";
 	}
 }
