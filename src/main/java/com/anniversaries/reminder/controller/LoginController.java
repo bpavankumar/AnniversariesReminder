@@ -21,7 +21,7 @@ public class LoginController {
 		return "login";
 	}
 
-	@RequestMapping(value="/home", method = RequestMethod.POST)
+	@RequestMapping(value="/home", method = {RequestMethod.POST})
 	public String checkUserLogin(@RequestParam("user_id") String user_id, @RequestParam("password") String password, @RequestParam("role") String role) {
 		boolean enabled = role.equalsIgnoreCase("ADMIN") ? true : false;
 		if (usersService.checkUserLogin(user_id, password, enabled))

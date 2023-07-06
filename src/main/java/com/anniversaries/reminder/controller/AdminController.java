@@ -15,7 +15,7 @@ public class AdminController {
 	@Autowired
 	public OverviewService overviewService;
 
-	@GetMapping("/home/overview")
+	@GetMapping("/admin/overview")
 	public String displayOverview(Model model) {
 		Map<String, Integer> data = overviewService.dataExtract();
 		model.addAttribute("data", data);
