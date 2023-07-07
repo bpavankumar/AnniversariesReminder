@@ -10,13 +10,17 @@ import org.springframework.stereotype.Service;
 public class OverviewService {
 	@Autowired
 	BirthdaysService birthdaysService;
-	
+	@Autowired
+	WeddingsService weddingsService;
+	@Autowired
+	DeathsService deathsService;
+
 	public Map<String, Integer> dataExtract() {
 		Map<String, Integer> data = new HashMap<>();
 		data.put("Birthdays", birthdaysService.getAllBirthdays().size());
 		data.put("Work Anniversaries", 0);
-		data.put("Wedding Anniversaries", 0);
-		data.put("Death Anniversaries", 0);
+		data.put("Wedding Anniversaries", weddingsService.getAllWeddingAnniversaries().size());
+		data.put("Death Anniversaries", deathsService.getAllDeathAnniversaries().size());
 		return data;
 	}
 }
