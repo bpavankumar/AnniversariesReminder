@@ -1,0 +1,35 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	</head>
+	<body>
+		<h1>All Deaths</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="table-responsive" th:if="${not#lists.isEmpty(deaths)}">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>S.No.</th>
+									<th>Who's DEATH was it?</th>
+									<th>Death DATE</th>
+									<th>How's he/she related to me?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="death : ${deaths}">
+									<td></td>
+									<!-- <td th:int = "${death.deathId}"></td> -->
+									<td th:text = "${death.deceased}"></td>
+									<td th:text = "${death.deathDate}"></td>
+									<td th:text = "${death.relation}"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
