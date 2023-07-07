@@ -1,0 +1,35 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	</head>
+	<body>
+		<h1>All Weddings</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="table-responsive" th:if="${not#lists.isEmpty(weddings)}">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>S.No.</th>
+									<th>Who's WEDDING was it?</th>
+									<th>Wedding DATE</th>
+									<th>How's the couple related to me?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="wedding : ${weddings}">
+									<td></td>
+									<!-- <td th:int = "${wedding.weddingId}"></td> -->
+									<td th:text = "${wedding.weddedCouple}"></td>
+									<td th:text = "${wedding.weddingDate}"></td>
+									<td th:text = "${wedding.relation}"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
