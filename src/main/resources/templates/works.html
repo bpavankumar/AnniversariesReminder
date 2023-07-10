@@ -1,0 +1,35 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	</head>
+	<body>
+		<h1>All Work-anniversaries</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="table-responsive" th:if="${not#lists.isEmpty(works)}">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>S.No.</th>
+									<th>Who's Work-anniversary is it?</th>
+									<th>Anniversary DATE</th>
+									<th>How's he/she related to me?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="work : ${works}">
+									<td></td>
+									<!-- <td th:int = "${work.workId}"></td> -->
+									<td th:text = "${work.colleague}"></td>
+									<td th:text = "${work.joiningDate}"></td>
+									<td th:text = "${work.relation}"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
