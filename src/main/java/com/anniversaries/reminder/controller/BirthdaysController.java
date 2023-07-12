@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.anniversaries.reminder.entity.Birthdays;
 import com.anniversaries.reminder.service.BirthdaysService;
@@ -32,7 +31,7 @@ public class BirthdaysController {
 		return "addbirthday";
 	}
 
-	@RequestMapping(value="/home/addbirthday", method = RequestMethod.POST)
+	@PostMapping("/home/addbirthday")
 	public String addBirthday(Model model) {
 		System.out.println("Entering PostMapping flow for addbirthday");
 		Birthdays birthday = new Birthdays();
