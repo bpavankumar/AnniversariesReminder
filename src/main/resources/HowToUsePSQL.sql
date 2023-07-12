@@ -15,3 +15,6 @@ CREATE DATABASE reminders;
 
 SELECT * FROM users;
 INSERT INTO users VALUES (1, true, 'pwd', 'ADMIN', 'admin');
+
+--To quit from the PSQL prompt.
+\q
