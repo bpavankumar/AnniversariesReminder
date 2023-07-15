@@ -23,8 +23,19 @@ public class BirthdaysController {
 	@GetMapping("/admin/birthdays")
 	public String allBirthdays(Model model) {
 		List<Birthdays> allBirthdays = birthdaysService.getAllBirthdays();
+		allBirthdays = cleanseData(allBirthdays);
 		model.addAttribute("birthdays", allBirthdays);
 		return "birthdays";
+	}
+
+	private List<Birthdays> cleanseData(List<Birthdays> allBirthdays) {
+		for(Birthdays birthday : allBirthdays) {
+			if (null == birthday.getBirthDate() || null == birthday.getBirthdayBaby()
+					|| null == birthday.getRelation()) {
+				allBirthdays.remove(birthday);
+			}
+		}
+		return allBirthdays;
 	}
 
 	@GetMapping("/addbirthday")
