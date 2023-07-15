@@ -4,16 +4,16 @@ import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "work")
 public class WorkAnniversaries {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name="Works_Generator", sequenceName="Works_Sequence")
+	@Id @GeneratedValue(generator="Works_Generator")
 	private int workId;
 	private String colleague;
 	private Date joiningDate;

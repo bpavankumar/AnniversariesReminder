@@ -4,16 +4,16 @@ import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "deaths")
 public class DeathAnniversaries {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name="Deaths_Generator", sequenceName="Deaths_Sequence")
+	@Id @GeneratedValue(generator="Deaths_Generator")
 	private int deathId;
 	private String deceased;
 	private Date deathDate;
