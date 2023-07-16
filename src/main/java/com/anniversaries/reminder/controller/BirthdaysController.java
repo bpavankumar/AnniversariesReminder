@@ -1,7 +1,6 @@
 package com.anniversaries.reminder.controller;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,25 +25,8 @@ public class BirthdaysController {
 	@GetMapping("/admin/birthdays")
 	public String allBirthdays(Model model) {
 		List<Birthdays> allBirthdays = birthdaysService.getAllBirthdays();
-		//allBirthdays = cleanseData(allBirthdays);
 		model.addAttribute("birthdays", allBirthdays);
 		return "birthdays";
-	}
-
-	@SuppressWarnings("unused")
-	private List<Birthdays> cleanseData(List<Birthdays> allBirthdays) {
-		List<Birthdays> data = new ArrayList<>();
-		for(Birthdays birthday : allBirthdays) {
-			if (null == birthday.getBirthDate() || null == birthday.getBirthdayBaby()
-					|| null == birthday.getRelation()) {
-				data.add(birthday);
-			} else {
-				continue;
-			}
-		}
-		allBirthdays.removeAll(data);
-		data.clear();
-		return allBirthdays;
 	}
 
 	@GetMapping("/addbirthday")
