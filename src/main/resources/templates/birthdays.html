@@ -16,6 +16,8 @@
 									<th>Who's BIRTHDAY is it?</th>
 									<th>Birthday DATE</th>
 									<th>How's he/she related to me?</th>
+									<th></th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -24,6 +26,16 @@
 									<td th:text = "${birthday.birthdayBaby}"></td>
 									<td th:text = "${birthday.birthDate}"></td>
 									<td th:text = "${birthday.relation}"></td>
+									<td>
+										<form th:action="@{/admin/birthdays/update/{id}(id=${birthday.birthdayId})}" method="POST">
+						                    <input type="submit" value="Update" class="btn btn-primary" onclick="return confirm('Are you sure?')">
+						                </form>
+						            </td>
+									<td>
+										<form th:action="@{/admin/birthdays/delete/{id}(id=${birthday.birthdayId})}" method="POST">
+						                    <input type="submit" value="Delete" class="btn btn-primary" style="background-color: red" onclick="return confirm('Are you sure?')">
+						                </form>
+						            </td>
 								</tr>
 							</tbody>
 						</table>

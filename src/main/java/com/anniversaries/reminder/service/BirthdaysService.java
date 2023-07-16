@@ -25,7 +25,17 @@ public class BirthdaysService {
 			return true;
 		} catch(Exception exception) {
 			exception.printStackTrace();
-			return false;
 		}
+		return false;
+	}
+
+	public boolean deleteABirthday(String birthdayId) {
+		try {
+			birthdaysRepository.deleteById(Integer.parseInt(birthdayId));
+			return true;
+		} catch(Exception exception) {
+			exception.printStackTrace();
+		}
+		return false;
 	}
 }

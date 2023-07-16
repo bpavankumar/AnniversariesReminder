@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,11 +26,12 @@ public class BirthdaysController {
 	@GetMapping("/admin/birthdays")
 	public String allBirthdays(Model model) {
 		List<Birthdays> allBirthdays = birthdaysService.getAllBirthdays();
-		allBirthdays = cleanseData(allBirthdays);
+		//allBirthdays = cleanseData(allBirthdays);
 		model.addAttribute("birthdays", allBirthdays);
 		return "birthdays";
 	}
 
+	@SuppressWarnings("unused")
 	private List<Birthdays> cleanseData(List<Birthdays> allBirthdays) {
 		List<Birthdays> data = new ArrayList<>();
 		for(Birthdays birthday : allBirthdays) {
@@ -52,13 +55,18 @@ public class BirthdaysController {
 
 	@RequestMapping(value="/home/addbirthday", method = {RequestMethod.POST})
 	public String addBirthday(@RequestParam("birthdaybaby") String birthdaybaby, @RequestParam("birthdate") Date birthdate, @RequestParam("relation") String relation) {
-		System.out.println("Entering PostMapping flow for addbirthday");
 		Birthdays birthday = new Birthdays();
 		birthday.setBirthdayBaby(birthdaybaby);
 		birthday.setBirthDate(birthdate);
 		birthday.setRelation(relation);
-		System.out.println(birthday.toString());
 		boolean result = birthdaysService.addABirthday(birthday);
 		return (result==true) ? "addbirthday" : "failure";
+	}
+
+	@PostMapping("/admin/birthdays/delete/{birthdayId}")
+	public String deleteBirthday(@PathVariable("birthdayId") String birthdayId, Model model) {
+		System.out.println("BirthdaysController.deleteBirthday() : Deleting birthday with ID: " + birthdayId);
+		boolean result = birthdaysService.deleteABirthday(birthdayId);
+		return (result==true) ? "redirect:/admin/birthdays" : "failure";
 	}
 }
