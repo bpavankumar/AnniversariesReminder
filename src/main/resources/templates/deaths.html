@@ -20,8 +20,7 @@
 							</thead>
 							<tbody>
 								<tr th:each="death : ${deaths}">
-									<td></td>
-									<!-- <td th:int = "${death.deathId}"></td> -->
+									<td th:text = "${death.deathId}"></td>
 									<td th:text = "${death.deceased}"></td>
 									<td th:text = "${death.deathDate}"></td>
 									<td th:text = "${death.relation}"></td>
