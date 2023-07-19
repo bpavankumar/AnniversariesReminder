@@ -9,7 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * * https://www.codejava.net/frameworks/spring-boot/form-authentication-with-jdbc-and-mysql
  * */
 @SpringBootApplication
-public class AnniversariesReminderApplication extends SpringBootServletInitializer{
+public class AnniversariesReminderApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AnniversariesReminderApplication.class, args);
