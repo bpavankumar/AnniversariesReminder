@@ -16,6 +16,8 @@
 									<th>Who's WEDDING was it?</th>
 									<th>Wedding DATE</th>
 									<th>How's the couple related to me?</th>
+									<th></th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -24,6 +26,16 @@
 									<td th:text = "${wedding.weddedCouple}"></td>
 									<td th:text = "${wedding.weddingDate}"></td>
 									<td th:text = "${wedding.relation}"></td>
+									<td>
+										<form th:action="@{/admin/weddingss/update/{id}(id=${wedding.weddingId})}" method="POST">
+						                    <input type="submit" value="Update" class="btn btn-primary" onclick="return confirm('Are you sure?')">
+						                </form>
+									</td>
+									<td>
+										<form th:action="@{/admin/weddings/delete/{id}(id=${wedding.weddingId})}" method="POST">
+						                    <input type="submit" value="Delete" class="btn btn-primary" style="background-color: red" onclick="return confirm('Are you sure?')">
+						                </form>
+									</td>
 								</tr>
 							</tbody>
 						</table>
