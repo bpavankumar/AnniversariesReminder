@@ -16,6 +16,8 @@
 									<th>Who's DEATH was it?</th>
 									<th>Death DATE</th>
 									<th>How's he/she related to me?</th>
+									<th></th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -24,6 +26,16 @@
 									<td th:text = "${death.deceased}"></td>
 									<td th:text = "${death.deathDate}"></td>
 									<td th:text = "${death.relation}"></td>
+									<td>
+										<form th:action="@{/admin/deaths/update/{id}(id=${death.deathId})}" method="POST">
+						                    <input type="submit" value="Update" class="btn btn-primary" onclick="return confirm('Are you sure?')">
+						                </form>
+									</td>
+									<td>
+										<form th:action="@{/admin/deaths/delete/{id}(id=${death.deathId})}" method="POST">
+						                    <input type="submit" value="Delete" class="btn btn-primary" style="background-color: red" onclick="return confirm('Are you sure?')">
+						                </form>
+									</td>
 								</tr>
 							</tbody>
 						</table>

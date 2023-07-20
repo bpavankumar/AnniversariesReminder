@@ -27,7 +27,7 @@
 									<td th:text = "${wedding.weddingDate}"></td>
 									<td th:text = "${wedding.relation}"></td>
 									<td>
-										<form th:action="@{/admin/weddingss/update/{id}(id=${wedding.weddingId})}" method="POST">
+										<form th:action="@{/admin/weddings/update/{id}(id=${wedding.weddingId})}" method="POST">
 						                    <input type="submit" value="Update" class="btn btn-primary" onclick="return confirm('Are you sure?')">
 						                </form>
 									</td>
