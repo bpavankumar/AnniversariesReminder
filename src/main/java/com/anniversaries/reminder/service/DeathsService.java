@@ -18,4 +18,24 @@ public class DeathsService {
 		List<DeathAnniversaries> deaths = deathsRepository.fetchAllDeaths();
 		return deaths;
 	}
+
+	public boolean addADeath(DeathAnniversaries death) {
+		try {
+			deathsRepository.save(death);
+			return true;
+		} catch(Exception exception) {
+			exception.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean deleteABirthday(String deathId) {
+		try {
+			deathsRepository.deleteById(Integer.parseInt(deathId));
+			return true;
+		} catch(Exception exception) {
+			exception.printStackTrace();
+		}
+		return false;
+	}
 }
