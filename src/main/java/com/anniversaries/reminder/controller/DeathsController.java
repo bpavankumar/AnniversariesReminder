@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.anniversaries.reminder.entity.Birthdays;
 import com.anniversaries.reminder.entity.DeathAnniversaries;
 import com.anniversaries.reminder.service.DeathsService;
 
