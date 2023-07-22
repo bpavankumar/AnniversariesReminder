@@ -29,7 +29,7 @@ public class DeathsService {
 		return false;
 	}
 
-	public boolean deleteABirthday(String deathId) {
+	public boolean deleteADeath(String deathId) {
 		try {
 			deathsRepository.deleteById(Integer.parseInt(deathId));
 			return true;
