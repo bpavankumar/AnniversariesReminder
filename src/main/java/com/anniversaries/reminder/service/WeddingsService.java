@@ -28,4 +28,14 @@ public class WeddingsService {
 		}
 		return false;
 	}
+
+	public boolean deleteAWedding(String weddingId) {
+		try {
+			weddingsRepository.deleteById(Integer.parseInt(weddingId));
+			return true;
+		} catch(Exception exception) {
+			exception.printStackTrace();
+		}
+		return false;
+	}
 }

@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,5 +42,11 @@ public class WeddingsController {
 		wedding.setRelation(relation);
 		boolean result = weddingsService.addAWedding(wedding);
 		return (result==true) ? "addwedding" : "failure";
+	}
+
+	@PostMapping("/admin/weddings/delete/{weddingId}")
+	public String deleteWedding(@PathVariable("weddingId") String weddingId, Model model) {
+		boolean result = weddingsService.deleteAWedding(weddingId);
+		return (result==true) ? "redirect:/admin/weddings" : "failure";
 	}
 }
