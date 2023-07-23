@@ -18,4 +18,14 @@ public class WeddingsService {
 		List<WeddingAnniversaries> weddings = weddingsRepository.fetchAllWeddings();
 		return weddings;
 	}
+
+	public boolean addAWedding(WeddingAnniversaries wedding) {
+		try {
+			weddingsRepository.save(wedding);
+			return true;
+		} catch(Exception exception) {
+			exception.printStackTrace();
+		}
+		return false;
+	}
 }

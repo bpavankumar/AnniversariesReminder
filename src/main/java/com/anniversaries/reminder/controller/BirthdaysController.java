@@ -31,7 +31,6 @@ public class BirthdaysController {
 
 	@GetMapping("/addbirthday")
 	public String addABirthday(Model model) {
-		System.out.println("GetMapping worked for addbirthday");
 		return "addbirthday";
 	}
 
