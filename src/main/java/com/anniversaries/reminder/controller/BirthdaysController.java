@@ -46,7 +46,6 @@ public class BirthdaysController {
 
 	@PostMapping("/admin/birthdays/delete/{birthdayId}")
 	public String deleteBirthday(@PathVariable("birthdayId") String birthdayId, Model model) {
-		System.out.println("BirthdaysController.deleteBirthday() : Deleting birthday with ID: " + birthdayId);
 		boolean result = birthdaysService.deleteABirthday(birthdayId);
 		return (result==true) ? "redirect:/admin/birthdays" : "failure";
 	}

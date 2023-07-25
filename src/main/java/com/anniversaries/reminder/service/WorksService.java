@@ -18,4 +18,24 @@ public class WorksService {
 		List<WorkAnniversaries> workAnniversaries = worksRepository.fetchAllWorkAnniversaries();
 		return workAnniversaries;
 	}
+
+	public boolean addAWork(WorkAnniversaries work) {
+		try {
+			worksRepository.save(work);
+			return true;
+		} catch(Exception exception) {
+			exception.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean deleteAWork(String workId) {
+		try {
+			worksRepository.deleteById(Integer.parseInt(workId));
+			return true;
+		} catch(Exception exception) {
+			exception.printStackTrace();
+		}
+		return false;
+	}
 }
