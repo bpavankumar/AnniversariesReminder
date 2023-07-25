@@ -41,12 +41,12 @@ public class WorksController {
 		work.setJoiningDate(joiningDate);
 		work.setRelation(relation);
 		boolean result = worksService.addAWork(work);
-		return (result==true) ? "addwedding" : "failure";
+		return (result==true) ? "addwork" : "failure";
 	}
 
 	@PostMapping("/admin/works/delete/{workId}")
 	public String deleteWork(@PathVariable("workId") String workId, Model model) {
 		boolean result = worksService.deleteAWork(workId);
-		return (result==true) ? "redirect:/admin/weddings" : "failure";
+		return (result==true) ? "redirect:/admin/works" : "failure";
 	}
 }
