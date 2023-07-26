@@ -38,4 +38,14 @@ public class BirthdaysService {
 		}
 		return false;
 	}
+
+	public boolean updateABirthday(Birthdays birthday) {
+		try {
+			birthdaysRepository.save(birthday);
+			return true;
+		} catch(Exception exception) {
+			exception.printStackTrace();
+		}
+		return false;
+	}
 }

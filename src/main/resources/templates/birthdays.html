@@ -28,7 +28,7 @@
 									<td th:text = "${birthday.birthDate}"></td>
 									<td th:text = "${birthday.relation}"></td>
 									<td>
-										<form th:action="@{/admin/birthdays/update/{id}(id=${birthday.birthdayId})}" method="POST">
+										<form th:action="@{/admin/birthdays/update/{id}(id=${birthday})}" method="POST">
 						                    <input type="submit" value="Update" class="btn btn-primary" onclick="return confirm('Are you sure?')">
 						                </form>
 						            </td>

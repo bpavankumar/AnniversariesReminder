@@ -49,4 +49,10 @@ public class BirthdaysController {
 		boolean result = birthdaysService.deleteABirthday(birthdayId);
 		return (result==true) ? "redirect:/admin/birthdays" : "failure";
 	}
+
+	@PostMapping("/admin/birthdays/update/{birthday}")
+	public String updateBirthday(@PathVariable("birthday") Birthdays birthday, Model model) {
+		boolean result = birthdaysService.updateABirthday(birthday);
+		return (result == true) ? "redirect:/admin/birthdays" : "failure";
+	}
 }
