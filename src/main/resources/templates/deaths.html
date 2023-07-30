@@ -4,11 +4,11 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	</head>
 	<body>
-		<h1>All Deaths</h1>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8">
-					<div class="table-responsive" th:if="${not#lists.isEmpty(deaths)}">
+					<div class="table-responsive" style="text-align:center;" th:if="${not#lists.isEmpty(deaths)}">
+						<caption><h2>All Deaths</h2></caption>
 						<table class="table table-bordered">
 							<thead>
 								<tr>
