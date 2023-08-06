@@ -15,6 +15,7 @@ public class LoginController {
 
 	@Autowired
 	private UsersService usersService;
+	private boolean isAdmin = false;
 
 	@GetMapping("/")
 	public String login(Model model) {
@@ -23,9 +24,20 @@ public class LoginController {
 
 	@RequestMapping(value="/home", method = {RequestMethod.POST})
 	public String checkUserLogin(@RequestParam("user_id") String user_id, @RequestParam("password") String password, @RequestParam("role") String role) {
-		if (usersService.checkUserLogin(user_id, password, role))
+		if (usersService.checkUserLogin(user_id, password, role)) {
+			isAdmin = true;
 			return "AdminDashboard";
-		else
+		} else {
 			return "UserDashboard";
+		}
+	}
+
+	@RequestMapping(value="/home", method = {RequestMethod.GET})
+	public String traverse() {
+		if(isAdmin) {
+			return "AdminDashboard";
+		} else {
+			return "UserDashboard";
+		}
 	}
 }
