@@ -15,7 +15,7 @@ public class LoginController {
 
 	@Autowired
 	private UsersService usersService;
-	private boolean isAdmin = false;
+	private boolean isAdmin = true;
 
 	@GetMapping("/")
 	public String login(Model model) {
@@ -25,9 +25,9 @@ public class LoginController {
 	@RequestMapping(value="/home", method = {RequestMethod.POST})
 	public String checkUserLogin(@RequestParam("user_id") String user_id, @RequestParam("password") String password, @RequestParam("role") String role) {
 		if (usersService.checkUserLogin(user_id, password, role)) {
-			isAdmin = true;
 			return "AdminDashboard";
 		} else {
+			isAdmin = false;
 			return "UserDashboard";
 		}
 	}
