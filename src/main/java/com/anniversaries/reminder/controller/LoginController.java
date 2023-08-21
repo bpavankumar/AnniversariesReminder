@@ -15,7 +15,7 @@ public class LoginController {
 
 	@Autowired
 	private UsersService usersService;
-	private boolean isAdmin = true;
+	public boolean isAdmin = true;
 
 	@GetMapping("/")
 	public String login(Model model) {
